@@ -24,6 +24,7 @@ app.post('/refresh', (req, res) => {
             })
         })
         .catch(err => {
+            res.status(400).send("something went wrong")
         })
 })
 
@@ -42,6 +43,7 @@ app.post('/login', (req, res) => {
             expiresIn: data.body.expires_in,
         })
     }).catch(err => {
+        res.status(400).send("something went wrong")
     })
 })
 
